@@ -40,7 +40,7 @@ require('bower_components/IMReport/IMReport',function(IMReport){
 html内
 ```html
 <!-- 引入核心js -->
-<script src="bower_components/IMReport/IMReport"></script>
+<script src="bower_components/IMReport/IMReport.js"></script>
 <script>
 (function(){
     //核心js在找不到define方法时会选择暴露IMReport方法在window下
