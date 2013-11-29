@@ -1,32 +1,32 @@
-IMReport ¿É¶¨ÖÆµÄÉÏ±¨×é¼þ
+IMReport å¯å®šåˆ¶çš„ä¸ŠæŠ¥ç»„ä»¶
 ================
 
-## Ò» ÌØÐÔ
- - Ê¹ÓÃUMD·½Ê½¶¨Òå, ¼æÈÝAMD/CMD¼°·ÇÄ£¿é¹æ·¶
- - µ÷ÓÃÍ³Ò»µÄÉÏ±¨cgi
- - ÉÏ±¨½ÚÁ÷(ºÏ²¢¶ÌÊ±¼äÄÚµÄÁ¬ÐøÉÏ±¨,¼õÉÙÉÏ±¨ÇëÇóÊý)
- - ¿É¸ù¾ÝÏîÄ¿Çé¿öÊ¹ÓÃ¹¤³§·½·¨¶¨ÖÆ×Ô¼ºµÄÉÏ±¨Æ÷(¿É¶¨ÖÆ²»Í¬µÄmidºÍÄ¬ÈÏÐÐÎª)
- - ¶¨ÖÆÉÏ±¨Æ÷Ö§³Ö×Ö·û´®MAP(ÓëÉÏ±¨ÐèÇóÒ»Ò»¶ÔÓ¦, ¼ò»¯ÉÏ±¨µã, ·½±ãºóÐøÎ¬»¤)
+## ä¸€ ç‰¹æ€§
+ - ä½¿ç”¨UMDæ–¹å¼å®šä¹‰, å…¼å®¹AMD/CMDåŠéžæ¨¡å—è§„èŒƒ
+ - è°ƒç”¨ç»Ÿä¸€çš„ä¸ŠæŠ¥cgi
+ - ä¸ŠæŠ¥èŠ‚æµ(åˆå¹¶çŸ­æ—¶é—´å†…çš„è¿žç»­ä¸ŠæŠ¥,å‡å°‘ä¸ŠæŠ¥è¯·æ±‚æ•°)
+ - å¯æ ¹æ®é¡¹ç›®æƒ…å†µä½¿ç”¨å·¥åŽ‚æ–¹æ³•å®šåˆ¶è‡ªå·±çš„ä¸ŠæŠ¥å™¨(å¯å®šåˆ¶ä¸åŒçš„midå’Œé»˜è®¤è¡Œä¸º)
+ - å®šåˆ¶ä¸ŠæŠ¥å™¨æ”¯æŒå­—ç¬¦ä¸²MAP(ä¸Žä¸ŠæŠ¥éœ€æ±‚ä¸€ä¸€å¯¹åº”, ç®€åŒ–ä¸ŠæŠ¥ç‚¹, æ–¹ä¾¿åŽç»­ç»´æŠ¤)
 
-## ¶þ ÈçºÎÒýÈëºÍÊ¹ÓÃ:
+## äºŒ å¦‚ä½•å¼•å…¥å’Œä½¿ç”¨:
 
-### 1. AMD/CMD»·¾³ÏÂ
-Àý2.1.1
+### 1. AMD/CMDçŽ¯å¢ƒä¸‹
+ä¾‹2.1.1
 ```javascript
 require('bower_components/IMReport/IMReport',function(IMReport){
-    //1. ½øÐÐÈ«¾ÖÅäÖÃ
+    //1. è¿›è¡Œå…¨å±€é…ç½®
     IMReport.config({
         //...
     });
     
-    //2. ´´½¨ÉÏ±¨Æ÷ÊµÀý, ¶¨ÖÆÉÏ±¨Æ÷²ÎÊýºÍmapÁÐ±í
+    //2. åˆ›å»ºä¸ŠæŠ¥å™¨å®žä¾‹, å®šåˆ¶ä¸ŠæŠ¥å™¨å‚æ•°å’Œmapåˆ—è¡¨
     var reportInstance = IMReport.ReportFactory({
-        config: { //Ò»¸ömap±í, keyÎªÉÏ±¨Ïî, valueÎªÉÏ±¨²ÎÊý
+        config: { //ä¸€ä¸ªmapè¡¨, keyä¸ºä¸ŠæŠ¥é¡¹, valueä¸ºä¸ŠæŠ¥å‚æ•°
             'REPORT_POINT_A':{'aId':1,'mId':100}
         }
     });
     
-    //3. ÔÚÒµÎñ´úÂëÖÐÊ¹ÓÃÊµÀýµÄreport·½·¨ÉÏ±¨
+    //3. åœ¨ä¸šåŠ¡ä»£ç ä¸­ä½¿ç”¨å®žä¾‹çš„reportæ–¹æ³•ä¸ŠæŠ¥
     function doSth(){
         //bussiness code
         reportInstance.report('REPORT_POINT_A');
@@ -35,16 +35,16 @@ require('bower_components/IMReport/IMReport',function(IMReport){
 });
 ```
 
-### 2. ·ÇÄ£¿é»¯»·¾³ÏÂ
-Àý2.1.2
-htmlÄÚ
+### 2. éžæ¨¡å—åŒ–çŽ¯å¢ƒä¸‹
+ä¾‹2.1.2
+htmlå†…
 ```html
-<!-- ÒýÈëºËÐÄjs -->
+<!-- å¼•å…¥æ ¸å¿ƒjs -->
 <script src="bower_components/IMReport/IMReport.js"></script>
 <script>
 (function(){
-    //ºËÐÄjsÔÚÕÒ²»µ½define·½·¨Ê±»áÑ¡Ôñ±©Â¶IMReport·½·¨ÔÚwindowÏÂ
-    //ËùÒÔÏÂÃæµÄ´úÂëÖ±½ÓÓÃIMReport¼´¿É
+    //æ ¸å¿ƒjsåœ¨æ‰¾ä¸åˆ°defineæ–¹æ³•æ—¶ä¼šé€‰æ‹©æš´éœ²IMReportæ–¹æ³•åœ¨windowä¸‹
+    //æ‰€ä»¥ä¸‹é¢çš„ä»£ç ç›´æŽ¥ç”¨IMReportå³å¯
     
     IMReport.config({
         //...
@@ -63,74 +63,74 @@ htmlÄÚ
 </script>
 ```
 
-## Èý ¹ØÓÚÉÏ±¨²ÎÊýµÄËµÃ÷
-### 1. ±³¾°
-Í¨³£, ÎÒÃÇ»áµ÷ÓÃÍ³Ò»µÄjsreport cgi½øÐÐÊý¾ÝÉÏ±¨  
-Í³Ò»µÄÉÏ±¨cgiÖ§³Ö´«Ò»ÏµÁÐ²ÎÊý, ¿ÉÉÏ±¨µ½²»Í¬µÄÏµÍ³( monitor imdata ads...)  
+## ä¸‰ å…³äºŽä¸ŠæŠ¥å‚æ•°çš„è¯´æ˜Ž
+### 1. èƒŒæ™¯
+é€šå¸¸, æˆ‘ä»¬ä¼šè°ƒç”¨ç»Ÿä¸€çš„jsreport cgiè¿›è¡Œæ•°æ®ä¸ŠæŠ¥  
+ç»Ÿä¸€çš„ä¸ŠæŠ¥cgiæ”¯æŒä¼ ä¸€ç³»åˆ—å‚æ•°, å¯ä¸ŠæŠ¥åˆ°ä¸åŒçš„ç³»ç»Ÿ( monitor imdata ads...)  
 
-µ«Õâ¸öcgiµÄÉÏ±¨²ÎÊýÊÇ¿¿Ô¼¶¨½øÐÐ×Ö·û´®Æ´½ÓµÄ  
+ä½†è¿™ä¸ªcgiçš„ä¸ŠæŠ¥å‚æ•°æ˜¯é çº¦å®šè¿›è¡Œå­—ç¬¦ä¸²æ‹¼æŽ¥çš„  
 `
 actionId-value-monitorId-flag1-flag2-flag3-ver-rev
 `
 
-ÓÃÆðÀ´·Ç³£Âé·³!
+ç”¨èµ·æ¥éžå¸¸éº»çƒ¦!
 
-±¾×é¼þ¾ÍÊÇÎªÁËÇ°¶ËÉÏ±¨·½±ã¶øµ®ÉúµÄ  
-coreÊÇamdÐ´µÄ, knightÔÚcoreµÄ»ù´¡ÉÏ·â×°ÁËÒ»²ãfactoryÒÔ¼°mapµÄÂß¼­.
+æœ¬ç»„ä»¶å°±æ˜¯ä¸ºäº†å‰ç«¯ä¸ŠæŠ¥æ–¹ä¾¿è€Œè¯žç”Ÿçš„  
+coreæ˜¯amdå†™çš„, knightåœ¨coreçš„åŸºç¡€ä¸Šå°è£…äº†ä¸€å±‚factoryä»¥åŠmapçš„é€»è¾‘.
 
-### 2. ²ÎÊýËµÃ÷
-ÏÂÃæ°´ÕÕjsÀïÊ¹ÓÃÊ±µÄÐÎÊ½ÁÐÒ»ÏÂÓÐÄÄÐ©²ÎÊý:  
+### 2. å‚æ•°è¯´æ˜Ž
+ä¸‹é¢æŒ‰ç…§jsé‡Œä½¿ç”¨æ—¶çš„å½¢å¼åˆ—ä¸€ä¸‹æœ‰å“ªäº›å‚æ•°:  
 
-*Ç°ÃæÊÇjsÀïÊ¹ÓÃÊ±µÄ²ÎÊý×Ö·û´®,  
-ºóÃæÊÇÍêÕûµÄ×Ö·û´®(¿É¶ÔÓ¦ÉÏÃæµÄÆ´½ÓË³Ðò¿´)ÒÔ¼°ËµÃ÷  
-´ø·½À¨ºÅµÄÊÇ¿ÉÑ¡²ÎÊý  
-²»´ø·½À¨ºÅµÄ²ÎÊýÔÚÉÏ±¨Ê±ÖÁÉÙÒªÓÐÒ»¸ö*
+*å‰é¢æ˜¯jsé‡Œä½¿ç”¨æ—¶çš„å‚æ•°å­—ç¬¦ä¸²,  
+åŽé¢æ˜¯å®Œæ•´çš„å­—ç¬¦ä¸²(å¯å¯¹åº”ä¸Šé¢çš„æ‹¼æŽ¥é¡ºåºçœ‹)ä»¥åŠè¯´æ˜Ž  
+å¸¦æ–¹æ‹¬å·çš„æ˜¯å¯é€‰å‚æ•°  
+ä¸å¸¦æ–¹æ‹¬å·çš„å‚æ•°åœ¨ä¸ŠæŠ¥æ—¶è‡³å°‘è¦æœ‰ä¸€ä¸ª*
 
-     - `mId`      monitorId  monitorÏµÍ³µÄÉÏ±¨id
-     - `aId`      actionId   Êý·Ö:ÐÐÎªid
-     - `v`        [value]    Êý·Ö:ÐÐÎªvalue
-     - `flag1`    [flag1]    Êý·Ö:ÐÐÎªµÄ±êÖ¾Î»1
-     - `flag2`    [flag2]    Êý·Ö:ÐÐÎªµÄ±êÖ¾Î»2
-     - `flag3`    [flag3]    Êý·Ö:ÐÐÎªµÄ±êÖ¾Î»3
-     - `ver`      [ver]      Êý·Ö:°æ±¾
-     - `rev`      [rev]      Êý·Ö:¸½¼Ó²ÎÊý
+     - `mId`      monitorId  monitorç³»ç»Ÿçš„ä¸ŠæŠ¥id
+     - `aId`      actionId   æ•°åˆ†:è¡Œä¸ºid
+     - `v`        [value]    æ•°åˆ†:è¡Œä¸ºvalue
+     - `flag1`    [flag1]    æ•°åˆ†:è¡Œä¸ºçš„æ ‡å¿—ä½1
+     - `flag2`    [flag2]    æ•°åˆ†:è¡Œä¸ºçš„æ ‡å¿—ä½2
+     - `flag3`    [flag3]    æ•°åˆ†:è¡Œä¸ºçš„æ ‡å¿—ä½3
+     - `ver`      [ver]      æ•°åˆ†:ç‰ˆæœ¬
+     - `rev`      [rev]      æ•°åˆ†:é™„åŠ å‚æ•°
 
-## ËÄ ½Ó¿ÚËµÃ÷
+## å›› æŽ¥å£è¯´æ˜Ž
 
 ###core: config(object)   
-####ÅäÖÃÉÏ±¨µÄÈ«¾ÖÄ¬ÈÏ²ÎÊý
+####é…ç½®ä¸ŠæŠ¥çš„å…¨å±€é»˜è®¤å‚æ•°
 
-Àý4.1.1:
+ä¾‹4.1.1:
 ```javascript
 IMReport.config({//
-	'bId': 192, //qqm·ÖÅäµÄjsreportµÄmsgQ ID
-	'aId': function (mId){ return '0';}, //@amd²¹³äÏÂÕâ¸ö²ÎÊýµÄ×¢ÊÍ?
-	'ctype': 2 //ÉÏ±¨cgiÀàÐÍ£¬Ä¬ÈÏÊÇÐèÒªµÇÂ¼Ì¬£¬type=2£¬ÊÇ²»ÐèÒªµÇÂ¼Ì¬
+	'bId': 192, //qqmåˆ†é…çš„jsreportçš„msgQ ID
+	'aId': function (mId){ return '0';}, //@amdè¡¥å……ä¸‹è¿™ä¸ªå‚æ•°çš„æ³¨é‡Š?
+	'ctype': 2 //ä¸ŠæŠ¥cgiç±»åž‹ï¼Œé»˜è®¤æ˜¯éœ€è¦ç™»å½•æ€ï¼Œtype=2ï¼Œæ˜¯ä¸éœ€è¦ç™»å½•æ€
 });
 ```
 
 ###core: ReportFactory(object)
-####´´½¨Ò»¸ö¶¨ÖÆµÄÉÏ±¨Æ÷
-Àý4.2.1:
+####åˆ›å»ºä¸€ä¸ªå®šåˆ¶çš„ä¸ŠæŠ¥å™¨
+ä¾‹4.2.1:
 ```javascript
 var isVisitor = $.bom.getHash('visitor') ? 1:0;
 var from = $.bom.getHash('from');
 
 var reportInstance = IMReport.ReportFactory({
     config: {
-        'PAGE_ENTER': 800001, //×¢:½ö´«Ò»¸öÊý×ÖÊ±¸ÃÊý×Ö±íÊ¾mId
+        'PAGE_ENTER': 800001, //æ³¨:ä»…ä¼ ä¸€ä¸ªæ•°å­—æ—¶è¯¥æ•°å­—è¡¨ç¤ºmId
         'DOWNLOAD_BTN_CLICK':{'aId':9002,'mId':800002},
         'DOWNLOAD_BTN_CLICK#SUCC':{'aId':9003,'mId':800003}
     },
     getDefaultOptFn:function(usrParam){
-        //¶¨ÖÆÉÏ±¨Æ÷ÌØÓÐµÄÉÏ±¨ÐÐÎª(Èç¹û²»´«´Ëº¯Êý, ÒâÎ¶×Å±¾ÉÏ±¨Æ÷Ã»ÓÐ¶¨ÖÆµÄÌØÊâÉÏ±¨ÐÐÎª)
+        //å®šåˆ¶ä¸ŠæŠ¥å™¨ç‰¹æœ‰çš„ä¸ŠæŠ¥è¡Œä¸º(å¦‚æžœä¸ä¼ æ­¤å‡½æ•°, æ„å‘³ç€æœ¬ä¸ŠæŠ¥å™¨æ²¡æœ‰å®šåˆ¶çš„ç‰¹æ®Šä¸ŠæŠ¥è¡Œä¸º)
         var opt = {};
         
-        opt.bId = 193; //¶¨ÖÆÉÏ±¨Æ÷Ä¬ÈÏbId,¸ÃbIdÓÅÏÈ¼¶¸ßÓÚÈ«¾ÖµÄbId
+        opt.bId = 193; //å®šåˆ¶ä¸ŠæŠ¥å™¨é»˜è®¤bId,è¯¥bIdä¼˜å…ˆçº§é«˜äºŽå…¨å±€çš„bId
         
-        opt.flag1 = isVisitor; //Èç¹û²úÆ·ÒªÇóÇø·ÖÒ»Ð©ÉÏ±¨Çé¾°, ¿ÉÄÜ»áÒªÇóaIdÉÏ±¨Ê±´øÉÏflag,ÓÃÔ¼¶¨µÄ²»Í¬µÄÖµÀ´×öÍ³¼ÆÓÃ
+        opt.flag1 = isVisitor; //å¦‚æžœäº§å“è¦æ±‚åŒºåˆ†ä¸€äº›ä¸ŠæŠ¥æƒ…æ™¯, å¯èƒ½ä¼šè¦æ±‚aIdä¸ŠæŠ¥æ—¶å¸¦ä¸Šflag,ç”¨çº¦å®šçš„ä¸åŒçš„å€¼æ¥åšç»Ÿè®¡ç”¨
         
-        //Í³Ò»ÔÚaIdÉÏ±¨Ê±, ¶Ôv½øÐÐ´¦Àí(from create: 1, else: 0)
+        //ç»Ÿä¸€åœ¨aIdä¸ŠæŠ¥æ—¶, å¯¹vè¿›è¡Œå¤„ç†(from create: 1, else: 0)
         if( (typeof usrParam==='object')
             && ('aId' in usrParam)
             && !('v' in usrParam)){
@@ -141,25 +141,25 @@ var reportInstance = IMReport.ReportFactory({
 ```
 
 ###instance: report(string[, object])
-####ÔÚ¾ßÌåÉÏ±¨µãµ÷ÓÃµÄÉÏ±¨·½·¨
-×¢Òâ: ±ØÐëÏÈµ÷ÓÃÉÏÃæµÄ`IMReport.ReportFactory()`À´µÃµ½Ò»¸öÉÏ±¨Æ÷ÊµÀý, È»ºóÔÙµ÷ÓÃ¸Ã·½·¨
+####åœ¨å…·ä½“ä¸ŠæŠ¥ç‚¹è°ƒç”¨çš„ä¸ŠæŠ¥æ–¹æ³•
+æ³¨æ„: å¿…é¡»å…ˆè°ƒç”¨ä¸Šé¢çš„`IMReport.ReportFactory()`æ¥å¾—åˆ°ä¸€ä¸ªä¸ŠæŠ¥å™¨å®žä¾‹, ç„¶åŽå†è°ƒç”¨è¯¥æ–¹æ³•
 
-Àý4.3.1:(×î¼òµ¥Ò²ÊÇ×î³£ÓÃµÄÉÏ±¨µ÷ÓÃ)
+ä¾‹4.3.1:(æœ€ç®€å•ä¹Ÿæ˜¯æœ€å¸¸ç”¨çš„ä¸ŠæŠ¥è°ƒç”¨)
 ```javascript
 ...
 reportInstance.report('PAGE_ENTER');
 ...
 ```
 
-Àý4.3.1:(Ö¸¶¨ÉÏ±¨µã²ÎÊýµÄÉÏ±¨µ÷ÓÃ)
+ä¾‹4.3.1:(æŒ‡å®šä¸ŠæŠ¥ç‚¹å‚æ•°çš„ä¸ŠæŠ¥è°ƒç”¨)
 ```javascript
 reportInstance.report('DOWNLOAD_BTN_CLICK',{
-    bId: 194, //ÉÏ±¨µãÖ¸¶¨µÄbId, ÓÅÏÈ¼¶×î¸ß
-    v: getRoleType=='owner' ? 1:0 //ÉÏ±¨µãÖ¸¶¨µÄv, ÓÅÏÈ¼¶×î¸ß
+    bId: 194, //ä¸ŠæŠ¥ç‚¹æŒ‡å®šçš„bId, ä¼˜å…ˆçº§æœ€é«˜
+    v: getRoleType=='owner' ? 1:0 //ä¸ŠæŠ¥ç‚¹æŒ‡å®šçš„v, ä¼˜å…ˆçº§æœ€é«˜
 });
 ```
 
 
 ## TODO
- - ºÍgrunt taskÕûºÏ, ×öµ½×Ô¶¯Î¬»¤ÉÏ±¨MAP±í
- - ÍêÉÆ²âÊÔÓÃÀýºÍdemo
+ - å’Œgrunt taskæ•´åˆ, åšåˆ°è‡ªåŠ¨ç»´æŠ¤ä¸ŠæŠ¥MAPè¡¨
+ - å®Œå–„æµ‹è¯•ç”¨ä¾‹å’Œdemo
