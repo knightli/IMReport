@@ -12,7 +12,7 @@ IMReport 可定制的上报组件
 
 ### 1. AMD/CMD环境下
 例2.1.1
-```
+```javascript
 require('bower_components/IMReport/IMReport',function(IMReport){
     //1. 进行全局配置
     IMReport.config({
@@ -38,7 +38,7 @@ require('bower_components/IMReport/IMReport',function(IMReport){
 ### 2. 非模块化环境下
 例2.1.2
 html内
-```
+```html
 <!-- 引入核心js -->
 <script src="bower_components/IMReport/IMReport"></script>
 <script>
@@ -101,7 +101,7 @@ core是amd写的, knight在core的基础上封装了一层factory以及map的逻辑.
 ####配置上报的全局默认参数
 
 例4.1.1:
-```
+```javascript
 IMReport.config({//
 	'bId': 192, //qqm分配的jsreport的msgQ ID
 	'aId': function (mId){ return '0';}, //@amd补充下这个参数的注释?
@@ -112,7 +112,7 @@ IMReport.config({//
 ###core: ReportFactory(object)
 ####创建一个定制的上报器
 例4.2.1:
-```
+```javascript
 var isVisitor = $.bom.getHash('visitor') ? 1:0;
 var from = $.bom.getHash('from');
 
@@ -145,14 +145,14 @@ var reportInstance = IMReport.ReportFactory({
 注意: 必须先调用上面的`IMReport.ReportFactory()`来得到一个上报器实例, 然后再调用该方法
 
 例4.3.1:(最简单也是最常用的上报调用)
-```
+```javascript
 ...
 reportInstance.report('PAGE_ENTER');
 ...
 ```
 
 例4.3.1:(指定上报点参数的上报调用)
-```
+```javascript
 reportInstance.report('DOWNLOAD_BTN_CLICK',{
     bId: 194, //上报点指定的bId, 优先级最高
     v: getRoleType=='owner' ? 1:0 //上报点指定的v, 优先级最高
