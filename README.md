@@ -13,7 +13,7 @@ IMReport 可定制的上报组件
 ### 1. AMD/CMD环境下
 例2.1.1
 ```javascript
-require('bower_components/IMReport/IMReport',function(IMReport){
+require('bower_components/IMReport/src/IMReport',function(IMReport){
     //1. 进行全局配置
     IMReport.config({
         //...
@@ -40,7 +40,7 @@ require('bower_components/IMReport/IMReport',function(IMReport){
 html内
 ```html
 <!-- 引入核心js -->
-<script src="bower_components/IMReport/IMReport.js"></script>
+<script src="bower_components/IMReport/src/IMReport.js"></script>
 <script>
 (function(){
     //核心js在找不到define方法时会选择暴露IMReport方法在window下
