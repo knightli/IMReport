@@ -8,7 +8,23 @@ IMReport 可定制的上报组件
  - 可根据项目情况使用工厂方法定制自己的上报器(可定制不同的mid和默认行为)
  - 定制上报器支持字符串MAP(与上报需求一一对应, 简化上报点, 方便后续维护)
 
-## 二 如何引入和使用:
+## 二 如何引入
+
+建议使用bower方式引入：
+
+### 1. 准备（如果没有装bower的话）：
+```
+npm install bower
+```
+
+### 2. 安装
+```
+bower install IMReport
+```
+
+默认本组件会安装在当前目录的bower_components下
+
+## 三 如何使用:
 
 ### 1. AMD/CMD环境下
 例2.1.1
@@ -63,7 +79,7 @@ html内
 </script>
 ```
 
-## 三 关于上报参数的说明
+## 四 关于上报参数的说明
 ### 1. 背景
 通常, 我们会调用统一的jsreport cgi进行数据上报  
 统一的上报cgi支持传一系列参数, 可上报到不同的系统( monitor imdata ads...)  
@@ -95,7 +111,7 @@ core是amd写的, knight在core的基础上封装了一层factory以及map的逻
      - `ver`      [ver]      数分:版本
      - `rev`      [rev]      数分:附加参数
 
-## 四 接口说明
+## 五 接口说明
 
 ###core: config(object)   
 ####配置上报的全局默认参数
