@@ -1,0 +1,8 @@
+{
+  "name": "IMReport",
+  "version": "0.0.2",
+  "description": "a report front-end script",
+  "homepage": "https://github.com/knightli/IMReport",
+  "dependencies": {},
+  "devDependencies": {}
+}
